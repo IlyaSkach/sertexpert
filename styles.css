@@ -675,66 +675,47 @@ body {
 
 /* Секция "Мы в цифрах" */
 .statistics-section {
-  padding: 6rem 2rem;
-  background-color: var(--cream);
-  background-image: linear-gradient(
-    135deg,
-    var(--cream) 0%,
-    var(--light-gray) 100%
-  );
+  background-color: var(--light-gray);
+  padding: 5rem 2rem;
 }
 
 .statistics-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: 2rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .statistic-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  padding: 2rem;
   background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  text-align: center;
+  transition: transform 0.3s ease;
 }
 
 .statistic-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .statistic-icon {
-  font-size: 3rem;
+  font-size: 2.5rem;
   color: var(--accent-color);
-  margin-bottom: 1.5rem;
-  background-color: var(--light-gray);
-  width: 100px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
 }
 
 .statistic-number {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 700;
   color: var(--primary-color);
-  margin-bottom: 1rem;
-  transition: color 0.3s ease;
+  margin-bottom: 0.5rem;
 }
 
 .statistic-label {
   font-size: 1.1rem;
-  color: var(--secondary-color);
-  line-height: 1.5;
+  color: var(--text-color);
 }
 
 @media (max-width: 1024px) {
@@ -744,22 +725,22 @@ body {
 }
 
 @media (max-width: 768px) {
+  .statistics-section {
+    padding: 4rem 1rem;
+  }
+
   .statistics-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .statistic-item {
-    padding: 1.5rem;
-  }
-
-  .statistic-icon {
-    font-size: 2.5rem;
-    width: 80px;
-    height: 80px;
+    gap: 1.5rem;
   }
 
   .statistic-number {
     font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .statistics-grid {
+    grid-template-columns: 1fr;
   }
 
   .statistic-label {
