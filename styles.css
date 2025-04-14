@@ -1,10 +1,14 @@
 :root {
   /* Новая цветовая схема */
-  --primary-color: #374785;
-  --secondary-color: #a8d0e6;
-  --light-gray: #f8e9a1;
-  --cream: #f8e9a1;
-  --accent-color: #f76c6c;
+  --primary-color: #8aaaa5;
+  --secondary-color: #cfdbda;
+  --light-gray: #e2eeec;
+  --cream: #cabd9a;
+  --accent-color: #a5956d;
+  --text-color: #4a5d5a;
+  --white: #ffffff;
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-medium: rgba(0, 0, 0, 0.12);
 }
 
 * {
@@ -16,7 +20,7 @@
 body {
   font-family: "Montserrat", sans-serif;
   line-height: 1.6;
-  color: var(--primary-color);
+  color: var(--text-color);
   background-color: var(--light-gray);
   padding-top: 180px;
 }
@@ -27,8 +31,8 @@ body {
   left: 0;
   width: 100%;
   z-index: 1000;
-  background-color: white;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--white);
+  box-shadow: 0 2px 10px var(--shadow-light);
   transition: all 0.4s ease;
 }
 
@@ -96,7 +100,7 @@ body {
 }
 
 .nav-links a {
-  color: #1a3b6e;
+  color: #8aaaa5;
   text-decoration: none;
   padding: 10px 15px;
   font-weight: 500;
@@ -106,7 +110,7 @@ body {
 
 .nav-links a.active,
 .nav-links a.active::after {
-  color: #f05a28;
+  color: #a5956d;
 }
 
 .nav-links a.active::after {
@@ -116,7 +120,7 @@ body {
   left: 15%;
   width: 70%;
   height: 2px;
-  background-color: #f05a28;
+  background-color: #a5956d;
   transform: scaleX(1);
 }
 
@@ -127,7 +131,7 @@ body {
   left: 15%;
   width: 70%;
   height: 2px;
-  background-color: #f05a28;
+  background-color: #a5956d;
   transform: scaleX(0);
   transition: transform 0.3s ease;
 }
@@ -194,11 +198,11 @@ body {
   align-items: center;
   justify-content: center;
   padding: 6rem 2rem;
-  background-color: var(--cream);
+  background-color: var(--light-gray);
   background-image: linear-gradient(
     135deg,
-    var(--cream) 0%,
-    var(--light-gray) 100%
+    var(--light-gray) 0%,
+    var(--cream) 100%
   );
 }
 
@@ -223,16 +227,18 @@ body {
 }
 
 .benefit-card {
-  background: white;
+  background: var(--white);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px var(--shadow-light);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-left: 4px solid var(--cream);
 }
 
 .benefit-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px var(--shadow-medium);
+  border-left-color: var(--accent-color);
 }
 
 .benefit-icon {
@@ -248,32 +254,32 @@ body {
 }
 
 .benefit-card p {
-  color: var(--secondary-color);
+  color: var(--text-color);
   font-size: 1rem;
   line-height: 1.5;
 }
 
 .cta-button {
   background-color: var(--accent-color);
-  color: white;
+  color: var(--white);
   border: none;
   padding: 1.2rem 2.5rem;
   font-size: 1.2rem;
   border-radius: 50px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 5px 15px rgba(167, 196, 212, 0.4);
+  box-shadow: 0 5px 15px var(--shadow-light);
 }
 
 .cta-button:hover {
   background-color: var(--primary-color);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(167, 196, 212, 0.6);
+  box-shadow: 0 8px 20px var(--shadow-medium);
 }
 
 .footer {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--white);
   padding: 4rem 2rem 2rem;
 }
 
@@ -445,7 +451,7 @@ body {
 
 .slogan {
   font-size: 1.2rem;
-  color: #ff0000;
+  color: var(--accent-color);
   opacity: 0;
   transform: translateY(10px);
   animation: fadeInUp 1s ease-out forwards;
@@ -526,7 +532,7 @@ body {
   position: relative;
   padding: 6rem 2rem;
   overflow: hidden;
-  background-color: var(--light-gray);
+  background-color: var(--white);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -552,10 +558,11 @@ body {
   position: relative;
   z-index: 1;
   max-width: 1000px;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 3rem;
   border-radius: 20px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 15px 40px var(--shadow-medium);
+  border-bottom: 5px solid var(--cream);
 }
 
 .section-title {
@@ -581,7 +588,7 @@ body {
 .about-text {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: var(--primary-color);
+  color: var(--text-color);
   position: relative;
   z-index: 2;
 }
@@ -617,12 +624,12 @@ body {
 
 .services-section {
   padding: 6rem 2rem;
-  background-color: var(--light-gray);
+  background-color: var(--white);
 }
 
 .services-subtitle {
   text-align: center;
-  color: var(--primary-color);
+  color: var(--text-color);
   font-size: 1.2rem;
   margin-bottom: 3rem;
   max-width: 800px;
@@ -654,11 +661,12 @@ body {
   background-color: var(--light-gray);
   padding: 20px;
   border-radius: 50%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px var(--shadow-light);
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   aspect-ratio: 1/1;
+  border: 4px solid var(--cream);
 }
 
 .service-image.visible {
@@ -679,7 +687,7 @@ body {
 }
 
 .service-content p {
-  color: var(--secondary-color);
+  color: var(--text-color);
   font-size: 1.1rem;
   line-height: 1.6;
 }
@@ -756,7 +764,7 @@ body {
 
 /* Секция "Мы в цифрах" */
 .statistics-section {
-  background-color: var(--light-gray);
+  background-color: var(--white);
   padding: 5rem 2rem;
 }
 
@@ -769,16 +777,18 @@ body {
 }
 
 .statistic-item {
-  background-color: white;
+  background-color: var(--light-gray);
   border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px var(--shadow-light);
   padding: 2rem;
   text-align: center;
   transition: transform 0.3s ease;
+  border-bottom: 3px solid var(--cream);
 }
 
 .statistic-item:hover {
   transform: translateY(-10px);
+  border-bottom-color: var(--accent-color);
 }
 
 .statistic-icon {
@@ -852,11 +862,11 @@ body {
 /* Секция "Наша миссия и ценности" */
 .mission-section {
   padding: 6rem 2rem;
-  background-color: var(--light-gray);
+  background-color: var(--white);
   background-image: linear-gradient(
     135deg,
-    var(--light-gray) 0%,
-    var(--cream) 100%
+    var(--white) 0%,
+    var(--light-gray) 100%
   );
   position: relative;
   overflow: hidden;
@@ -914,17 +924,19 @@ body {
 }
 
 .mission-card {
-  background-color: white;
+  background-color: var(--white);
   border-radius: 15px;
   padding: 3rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px var(--shadow-light);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-top: 4px solid var(--cream);
 }
 
 .mission-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px var(--shadow-medium);
+  border-top-color: var(--accent-color);
 }
 
 .mission-icon {
@@ -950,7 +962,7 @@ body {
 
 .mission-card p {
   font-size: 1.2rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
   line-height: 1.8;
 }
 
@@ -963,17 +975,19 @@ body {
 }
 
 .value-card {
-  background-color: white;
+  background-color: var(--white);
   border-radius: 15px;
   padding: 2rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px var(--shadow-light);
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-right: 4px solid var(--cream);
 }
 
 .value-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 30px var(--shadow-medium);
+  border-right-color: var(--accent-color);
 }
 
 .value-icon {
@@ -999,7 +1013,7 @@ body {
 
 .value-card p {
   font-size: 1rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
@@ -1009,11 +1023,13 @@ body {
   gap: 3rem;
   max-width: 1200px;
   margin: 0 auto 4rem;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 15px;
   padding: 3rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px var(--shadow-light);
   margin-top: 40px;
+  border-left: 4px solid var(--cream);
+  border-right: 4px solid var(--accent-color);
 }
 
 .team-text {
@@ -1022,7 +1038,7 @@ body {
 
 .team-text p {
   font-size: 1.2rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
   line-height: 1.8;
 }
 
@@ -1051,10 +1067,11 @@ body {
 .work-with-us {
   max-width: 1000px;
   margin: 0 auto;
-  background-color: white;
+  background-color: var(--white);
   border-radius: 15px;
   padding: 3rem;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px var(--shadow-light);
+  border-bottom: 4px solid var(--accent-color);
 }
 
 .work-with-us h3 {
@@ -1085,7 +1102,7 @@ body {
 
 .work-item p {
   font-size: 1.1rem;
-  color: var(--secondary-color);
+  color: var(--text-color);
   line-height: 1.6;
 }
 
@@ -1676,32 +1693,36 @@ body:has(.services-section:first-child) {
 }
 
 .job-card {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px var(--shadow-light);
+  padding: 1.8rem;
   display: flex;
   flex-direction: column;
   height: 380px;
   position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border-top: 4px solid var(--cream);
 }
 
 .job-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 25px var(--shadow-medium);
+  border-top-color: var(--accent-color);
 }
 
 .job-title {
-  color: #1a3b6e;
-  margin-bottom: 15px;
-  font-size: 20px;
+  color: var(--primary-color);
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
   line-height: 1.3;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  min-height: 104px;
+  min-height: 3.3rem;
 }
 
 .job-info {
@@ -1712,7 +1733,7 @@ body:has(.services-section:first-child) {
 .job-location,
 .job-experience {
   margin-bottom: 10px;
-  color: #555;
+  color: var(--text-color);
   font-size: 16px;
   display: flex;
   align-items: center;
@@ -1720,42 +1741,37 @@ body:has(.services-section:first-child) {
 
 .job-location i,
 .job-experience i {
-  color: #1a3b6e;
-  margin-right: 10px;
+  margin-right: 0.5rem;
+  color: var(--accent-color);
   width: 20px;
 }
 
 .job-salary {
-  color: #1a3b6e;
-  font-weight: 600;
-  font-size: 18px;
-  margin-bottom: 25px;
-  display: flex;
-  align-items: center;
-}
-
-.job-salary:before {
-  content: "\f158";
-  font-family: "Font Awesome 5 Free";
-  margin-right: 10px;
-  color: #1a3b6e;
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background-color: var(--light-gray);
+  color: var(--primary-color);
+  border-radius: 50px;
+  font-weight: 500;
+  margin-top: 0.7rem;
+  font-size: 0.95rem;
 }
 
 .details-btn {
-  background-color: #1a3b6e;
-  color: white;
+  background-color: var(--primary-color);
+  color: var(--white);
   border: none;
+  padding: 0.7rem 1.2rem;
   border-radius: 5px;
-  padding: 12px 20px;
   cursor: pointer;
-  font-size: 16px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease;
   font-weight: 500;
   width: 100%;
+  margin-top: 1rem;
 }
 
 .details-btn:hover {
-  background-color: #15305c;
+  background-color: var(--accent-color);
 }
 
 /* Стили для модального окна с деталями вакансии */
@@ -1779,27 +1795,31 @@ body:has(.services-section:first-child) {
 }
 
 .job-details-content {
-  background-color: white;
-  border-radius: 8px;
-  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 2.5rem;
   width: 100%;
   max-width: 800px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px var(--shadow-medium);
+  border-top: 5px solid var(--accent-color);
 }
 
 .job-details-content h3 {
-  color: #1a3b6e;
-  margin-bottom: 20px;
-  font-size: 24px;
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
 }
 
 .job-details-info {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.5rem;
   margin-bottom: 2rem;
+  background-color: var(--light-gray);
+  padding: 1.2rem;
+  border-radius: 8px;
 }
 
 .job-details-info p {
@@ -1807,16 +1827,16 @@ body:has(.services-section:first-child) {
   display: flex;
   align-items: center;
   font-size: 1.1rem;
-  color: #1a3b6e;
+  color: var(--text-color);
 }
 
 .job-details-info i {
-  margin-right: 0.5rem;
-  color: #f05a28;
+  margin-right: 0.7rem;
+  color: var(--accent-color);
 }
 
 .job-details-description h4 {
-  color: #1a3b6e;
+  color: var(--primary-color);
   margin-top: 1.5rem;
   margin-bottom: 1rem;
   font-size: 1.3rem;
@@ -1828,25 +1848,26 @@ body:has(.services-section:first-child) {
 }
 
 .job-details-description li {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
   position: relative;
   list-style-type: none;
   padding-left: 1.5rem;
+  color: var(--text-color);
 }
 
 .job-details-description li::before {
   content: "•";
-  color: #f05a28;
-  font-size: 1.2rem;
-  position: absolute;
-  left: 0;
-  top: -0.1rem;
+  color: var(--accent-color);
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 .job-details-actions {
   display: flex;
   justify-content: flex-end;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
   gap: 1rem;
 }
 
@@ -1859,23 +1880,29 @@ body:has(.services-section:first-child) {
 }
 
 .apply-btn {
-  background-color: #f05a28;
-  color: white;
+  background-color: var(--accent-color);
+  color: var(--white);
   border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 500;
 }
 
 .apply-btn:hover {
-  background-color: #d84a1e;
+  background-color: var(--primary-color);
 }
 
 .close-details-btn {
-  background-color: #f0f0f0;
-  color: #333;
-  border: 1px solid #ddd;
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  font-weight: 500;
 }
 
 .close-details-btn:hover {
-  background-color: #e0e0e0;
+  background-color: var(--secondary-color);
 }
 
 /* Стили для формы отклика */
@@ -1894,23 +1921,23 @@ body:has(.services-section:first-child) {
 }
 
 .application-form {
-  background-color: white;
-  border-radius: 8px;
-  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 2.5rem;
   width: 100%;
   max-width: 800px;
   max-height: 90vh;
   overflow-y: auto;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 15px var(--shadow-medium);
+  border-top: 5px solid var(--accent-color);
 }
 
 .application-form h3 {
-  color: #1a3b6e;
-  margin-bottom: 1.5rem;
-  font-size: 1.5rem;
+  color: var(--primary-color);
   text-align: center;
+  margin-bottom: 1.5rem;
   position: relative;
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.75rem;
 }
 
 .application-form h3::after {
@@ -1919,9 +1946,9 @@ body:has(.services-section:first-child) {
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
-  width: 50px;
-  height: 2px;
-  background-color: #f05a28;
+  width: 100px;
+  height: 3px;
+  background-color: #a5956d;
 }
 
 .form-group {
@@ -1932,24 +1959,24 @@ body:has(.services-section:first-child) {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: 500;
-  color: #1a3b6e;
+  color: #8aaaa5;
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   width: 100%;
-  padding: 0.8rem;
-  border: 1px solid #ddd;
+  padding: 0.75rem;
+  border: 1px solid #cfdbda;
   border-radius: 5px;
-  font-size: 1rem;
-  color: #333;
-  transition: border-color 0.3s;
+  color: #8aaaa5;
 }
 
 .form-group input:focus,
-.form-group textarea:focus {
-  border-color: #1a3b6e;
+.form-group textarea:focus,
+.form-group select:focus {
   outline: none;
+  border-color: #8aaaa5;
 }
 
 /* Стилизация кнопки прикрепления файла */
@@ -1964,32 +1991,31 @@ body:has(.services-section:first-child) {
 
 .custom-file-upload {
   display: inline-block;
-  padding: 0.8rem 1.5rem;
+  padding: 0.75rem 1.5rem;
   cursor: pointer;
-  background-color: #f0f0f0;
-  color: #333;
-  border: 1px solid #ddd;
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
   border-radius: 5px;
-  font-size: 1rem;
+  text-align: center;
   transition: background-color 0.3s;
   width: 100%;
-  text-align: center;
+  font-weight: 500;
 }
 
 .custom-file-upload i {
   margin-right: 0.5rem;
-  color: #f05a28;
+  color: var(--accent-color);
 }
 
 .custom-file-upload:hover {
-  background-color: #e0e0e0;
+  background-color: var(--secondary-color);
 }
 
 .file-name {
   margin-top: 0.5rem;
   font-size: 0.9rem;
-  color: #666;
-  font-style: italic;
+  color: #8aaaa5;
 }
 
 .form-actions {
@@ -2001,31 +2027,31 @@ body:has(.services-section:first-child) {
 
 .submit-btn,
 .cancel-btn {
-  padding: 10px 20px;
-  border-radius: 4px;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
 .submit-btn {
-  background-color: #f05a28;
-  color: white;
+  background-color: var(--accent-color);
+  color: var(--white);
   border: none;
 }
 
 .submit-btn:hover {
-  background-color: #d84a1e;
+  background-color: var(--primary-color);
 }
 
 .cancel-btn {
-  background-color: #f0f0f0;
-  color: #333;
-  border: 1px solid #ddd;
+  background-color: var(--light-gray);
+  color: var(--text-color);
+  border: 1px solid var(--secondary-color);
 }
 
 .cancel-btn:hover {
-  background-color: #e0e0e0;
+  background-color: var(--secondary-color);
 }
 
 /* Адаптивность для мобильных устройств */
@@ -2093,13 +2119,12 @@ section[id].scrolled {
 }
 
 .privacy-checkbox a {
-  color: #f05a28;
+  color: #a5956d;
   text-decoration: underline;
-  transition: color 0.3s ease;
 }
 
 .privacy-checkbox a:hover {
-  color: #d84a1e;
+  color: #8aaaa5;
 }
 
 /* Стили для страницы политики конфиденциальности */
@@ -2108,31 +2133,31 @@ section[id].scrolled {
 }
 
 .privacy-policy h1 {
-  font-size: 32px;
-  margin-bottom: 30px;
-  color: #2c3e50;
+  font-size: 2.5rem;
+  color: #8aaaa5;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .privacy-content {
-  background-color: #ffffff;
+  background-color: var(--white);
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px var(--shadow-light);
 }
 
 .privacy-content h2 {
-  font-size: 24px;
-  color: #1a5276;
-  margin-top: 30px;
-  margin-bottom: 15px;
-  border-bottom: 1px solid #e0e0e0;
-  padding-bottom: 10px;
+  color: #a5956d;
+  font-size: 1.8rem;
+  margin: 2rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid #e2eeec;
 }
 
 .privacy-content p {
   margin-bottom: 15px;
   line-height: 1.6;
+  color: var(--text-color);
 }
 
 .privacy-content ul {
@@ -2146,14 +2171,12 @@ section[id].scrolled {
 }
 
 .privacy-content a {
-  color: #2980b9;
-  text-decoration: none;
-  transition: color 0.3s;
+  color: #a5956d;
+  text-decoration: underline;
 }
 
 .privacy-content a:hover {
-  color: #1a5276;
-  text-decoration: underline;
+  color: #8aaaa5;
 }
 
 @media (max-width: 768px) {
@@ -2189,20 +2212,20 @@ section[id].scrolled {
 }
 
 .modal-content {
-  background-color: #233142;
-  color: #fff;
-  padding: 30px;
+  background-color: var(--white);
+  color: var(--text-color);
+  margin: 15% auto;
+  padding: 2.5rem;
   border-radius: 10px;
+  box-shadow: 0 5px 20px var(--shadow-medium);
   max-width: 500px;
-  width: 80%;
-  text-align: center;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;
+  border-left: 5px solid var(--accent-color);
 }
 
 .modal-content h3 {
   margin-top: 0;
-  color: var(--accent-color);
+  color: var(--primary-color);
   font-size: 1.5rem;
   margin-bottom: 20px;
 }
@@ -2215,7 +2238,7 @@ section[id].scrolled {
 
 .close-modal {
   background-color: var(--accent-color);
-  color: white;
+  color: var(--white);
   border: none;
   padding: 10px 25px;
   border-radius: 5px;
@@ -2226,7 +2249,7 @@ section[id].scrolled {
 }
 
 .close-modal:hover {
-  background-color: #ff6b6b;
+  background-color: var(--primary-color);
 }
 
 /* Анимация появления модального окна */
