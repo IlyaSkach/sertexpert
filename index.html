@@ -16,9 +16,11 @@
 	<header class="header">
 		<nav class="nav">
 			<div class="logo-container">
-				<img src="Images/logo.png" alt="СертЭксперт" class="logo-img">
-				<div class="logo-text">СертЭксперт</div>
-				<div class="slogan">Мы сделаем Ваш бизнес лучше!</div>
+				<a href="index.html">
+					<img src="Images/logo.png" alt="СертЭксперт" class="logo-img">
+					<div class="logo-text">СертЭксперт</div>
+					<div class="slogan">Мы сделаем Ваш бизнес лучше!</div>
+				</a>
 			</div>
 
 			<div class="burger-menu">
@@ -28,9 +30,10 @@
 			</div>
 
 			<ul class="nav-links">
+				<!-- <li><a href="index.html">Главная</a></li> -->
 				<li><a href="#about">О компании</a></li>
-				<li><a href="#services">Услуги</a></li>
-				<li><a href="#vacancies">Вакансии</a></li>
+				<li><a href="services.html">Услуги</a></li>
+				<li><a href="vacancies.html">Вакансии</a></li>
 				<li><a href="#numbers">Мы в цифрах</a></li>
 				<li><a href="#startup" class="startup-btn">Заявка на стартап</a></li>
 			</ul>
@@ -39,9 +42,9 @@
 				<div class="social-icons">
 					<a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
 					<a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-					<a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+					<a href="#" class="social-icon vk-icon"><i class="fab fa-vk"></i></a>
 				</div>
-				<a href="#map" class="address-link">г. Москва, ул. Серт Эксперт, д. 1</a>
+				<a href="#map" class="address-link"> г. Москва, Пакгаузное шоссе, дом 1</a>
 			</div>
 		</nav>
 	</header>
@@ -79,10 +82,71 @@
 					<div class="benefit-card">
 						<i class="fas fa-user-graduate benefit-icon"></i>
 						<h3>Карьера для выпускников</h3>
-						<p>Отличные возможности для специалистов со средним и высшим образованием</p>
+						<p>Отличные возможности для специалистов со средним профессиональным и высшим образованием</p>
 					</div>
 				</div>
 				<button class="cta-button">Присоединиться к команде</button>
+			</div>
+		</section>
+
+		<section id="vacancies">
+			<div class="container">
+				<div class="work-with-us">
+					<h3>Что значит работать в ГК «Серт Эксперт»</h3>
+					<div class="work-items">
+						<div class="work-item">
+							<div class="work-icon">
+								<i class="fas fa-check-circle"></i>
+							</div>
+							<p>Выполнять работу, которая имеет важное значение для общества</p>
+						</div>
+
+						<div class="work-item">
+							<div class="work-icon">
+								<i class="fas fa-check-circle"></i>
+							</div>
+							<p>Приходите таким, какой вы есть - нам нужны индивидуальные и сильные личности</p>
+						</div>
+
+						<div class="work-item">
+							<div class="work-icon">
+								<i class="fas fa-check-circle"></i>
+							</div>
+							<p>Процветайте вместе с нами - сильной командой профессионалов</p>
+						</div>
+
+						<div class="work-item">
+							<div class="work-icon">
+								<i class="fas fa-check-circle"></i>
+							</div>
+							<p>Учитесь и развивайтесь в разных направлениях, вы не будете ограничены рамками</p>
+						</div>
+
+						<div class="work-item">
+							<div class="work-icon">
+								<i class="fas fa-check-circle"></i>
+							</div>
+							<p>Оставьте свой след - будьте лидером и создайте свою команду</p>
+						</div>
+					</div>
+
+					<div class="work-summary">
+						<p>Мы предоставляем всем нашим сотрудникам самые широкие возможности для профессиональной самореализации,
+							карьерного роста и достойного заработка!</p>
+					</div>
+				</div>
+
+				<div class="team-content">
+					<div class="team-text">
+						<p>Наша команда состоит из уже более 200 человек, но мы не готовы на этом останавливаться! У Вас будет
+							возможность получить и перенять уникальный опыт от самых "супер" профессиональных, амбициозных
+							сотрудников, экспертов в данном направлении бизнеса.</p>
+					</div>
+
+					<div class="team-image">
+						<img src="Images/team.jpeg" alt="Наша команда" class="team-img">
+					</div>
+				</div>
 			</div>
 		</section>
 
@@ -108,189 +172,6 @@
 
 					<p class="highlight">Секрет «Серт Эксперт» в том, что мы организовали совершенно новый подход к оформлению
 						документации.</p>
-				</div>
-			</div>
-		</section>
-
-		<section class="services-section" id="services">
-			<h2 class="section-title">Наши услуги</h2>
-			<p class="services-subtitle">Сертификация продукции и проведение испытаний следующих видов продукции:</p>
-
-			<div class="services-grid">
-				<div class="service-item image-right">
-					<div class="service-content">
-						<h3>Продукция для детей и подростков</h3>
-						<p>Проводим полный комплекс испытаний и сертификации товаров для детей и подростков. Гарантируем
-							соответствие продукции всем необходимым стандартам безопасности и качества.</p>
-					</div>
-					<img src="Images/s3.png" alt="Товары для детей" class="service-image">
-				</div>
-
-				<div class="service-item image-left">
-					<img src="Images/s2.png" alt="Игрушки" class="service-image">
-					<div class="service-content">
-						<h3>Игрушки</h3>
-						<p>Осуществляем сертификацию игрушек на соответствие требованиям технических регламентов. Проводим все
-							необходимые испытания для подтверждения безопасности игрушек.</p>
-					</div>
-				</div>
-
-				<div class="service-item image-right">
-					<div class="service-content">
-						<h3>Средства индивидуальной защиты</h3>
-						<p>Выполняем сертификацию СИЗ всех типов. Проводим испытания на соответствие требованиям безопасности и
-							эффективности защитных свойств.</p>
-					</div>
-					<img src="Images/s1.png" alt="Средства защиты" class="service-image">
-				</div>
-
-				<div class="service-item image-left">
-					<img src="Images/s4.png" alt="Продукция легкой промышленности" class="service-image">
-					<div class="service-content">
-						<h3>Продукция легкой промышленности</h3>
-						<p>Осуществляем сертификацию и испытания текстильной, швейной, трикотажной и кожевенной продукции. Проверяем
-							соответствие требованиям безопасности и качества.</p>
-					</div>
-				</div>
-
-				<div class="service-item image-right">
-					<div class="service-content">
-						<h3>Низковольтное оборудование</h3>
-						<p>Проводим сертификацию и испытания низковольтного оборудования на соответствие требованиям безопасности и
-							электробезопасности.</p>
-					</div>
-					<img src="Images/s14.png" alt="Низковольтное оборудование" class="service-image">
-				</div>
-
-				<div class="service-item image-left">
-					<img src="Images/s13.png" alt="Машины и оборудование" class="service-image">
-					<div class="service-content">
-						<h3>Машины и оборудование</h3>
-						<p>Осуществляем сертификацию и испытания промышленного оборудования, машин и механизмов на соответствие
-							требованиям безопасности и эффективности.</p>
-					</div>
-				</div>
-
-				<div class="service-item image-right">
-					<div class="service-content">
-						<h3>Электромагнитная совместимость</h3>
-						<p>Проводим испытания на электромагнитную совместимость электрооборудования и электронных устройств.</p>
-					</div>
-					<img src="Images/s12.png" alt="Электромагнитная совместимость" class="service-image">
-				</div>
-
-				<div class="service-item image-left">
-					<img src="Images/s11.png" alt="Оборудование для детских игровых площадок" class="service-image">
-					<div class="service-content">
-						<h3>Оборудование для детских игровых площадок</h3>
-						<p>Сертифицируем и испытываем оборудование для детских игровых площадок на соответствие требованиям
-							безопасности и прочности.</p>
-					</div>
-				</div>
-
-				<div class="service-item image-right">
-					<div class="service-content">
-						<h3>Колесные транспортные средства</h3>
-						<p>Проводим сертификацию и испытания колесных транспортных средств на соответствие требованиям безопасности
-							и экологичности.</p>
-					</div>
-					<img src="Images/s10.png" alt="Колесные транспортные средства" class="service-image">
-				</div>
-
-				<div class="service-item image-left">
-					<img src="Images/s9.png" alt="Мебельная продукция" class="service-image">
-					<div class="service-content">
-						<h3>Мебельная продукция</h3>
-						<p>Осуществляем сертификацию и испытания мебели на соответствие требованиям безопасности, прочности и
-							экологичности.</p>
-					</div>
-				</div>
-
-				<div class="service-item image-right">
-					<div class="service-content">
-						<h3>Пищевая продукция</h3>
-						<p>Проводим сертификацию и испытания пищевой продукции на соответствие требованиям безопасности и качества.
-						</p>
-					</div>
-					<img src="Images/s8.png" alt="Пищевая продукция" class="service-image">
-				</div>
-
-				<div class="service-item image-left">
-					<img src="Images/s7.png" alt="Парфюмерно-косметическая продукция" class="service-image">
-					<div class="service-content">
-						<h3>Парфюмерно-косметическая продукция</h3>
-						<p>Осуществляем сертификацию и испытания парфюмерно-косметической продукции на соответствие требованиям
-							безопасности и качества.</p>
-					</div>
-				</div>
-
-				<div class="service-item image-right">
-					<div class="service-content">
-						<h3>Экспертиза промышленной безопасности</h3>
-						<p>Проводим экспертизу промышленной безопасности объектов, оборудования и технологических процессов.</p>
-					</div>
-					<img src="Images/s6.png" alt="Экспертиза промышленной безопасности" class="service-image">
-				</div>
-
-				<div class="service-item image-left">
-					<img src="Images/s5.png" alt="Лаборатория неразрушающего контроля" class="service-image">
-					<div class="service-content">
-						<h3>Лаборатория неразрушающего контроля</h3>
-						<p>Осуществляем неразрушающий контроль материалов, конструкций и оборудования с использованием современных
-							методов и технологий.</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<section class="statistics-section">
-			<div class="container">
-				<h2 class="section-title">Мы в цифрах</h2>
-				<div class="statistics-grid">
-					<div class="statistic-item">
-						<div class="statistic-icon">
-							<i class="fas fa-calendar-alt"></i>
-						</div>
-						<div class="statistic-number" data-target="15">0</div>
-						<div class="statistic-label">лет на рынке</div>
-					</div>
-
-					<div class="statistic-item">
-						<div class="statistic-icon">
-							<i class="fas fa-users"></i>
-						</div>
-						<div class="statistic-number" data-target="200">0</div>
-						<div class="statistic-label">команда профессионалов</div>
-					</div>
-
-					<div class="statistic-item">
-						<div class="statistic-icon">
-							<i class="fas fa-file-alt"></i>
-						</div>
-						<div class="statistic-number" data-target="30">0</div>
-						<div class="statistic-label">технических регламентов в области аккредитации</div>
-					</div>
-					<div class="statistic-item">
-						<div class="statistic-icon">
-							<i class="fas fa-flask"></i>
-						</div>
-						<div class="statistic-number" data-target="10000">0</div>
-						<div class="statistic-label">методик испытаний</div>
-					</div>
-					<div class="statistic-item">
-						<div class="statistic-icon">
-							<i class="fas fa-tools"></i>
-						</div>
-						<div class="statistic-number" data-target="4500">0</div>
-						<div class="statistic-label">единиц современного испытательного оборудования</div>
-					</div>
-					<div class="statistic-item">
-						<div class="statistic-icon">
-							<i class="fas fa-globe"></i>
-						</div>
-						<div class="statistic-number" data-target="50000">0</div>
-						<div class="statistic-label">клиентов, в том числе и за пределами РФ</div>
-					</div>
 				</div>
 			</div>
 		</section>
@@ -342,61 +223,56 @@
 						<p>Уверенность в качестве предоставляемых услуг.</p>
 					</div>
 				</div>
+			</div>
+		</section>
 
-				<div class="team-content">
-					<div class="team-text">
-						<p>Наша команда состоит из уже более 200 человек, но мы не готовы на этом останавливаться! У Вас будет
-							возможность получить и перенять уникальный опыт от самых "супер" профессиональных, амбициозных
-							сотрудников, экспертов в данном направлении бизнеса.</p>
+		<section class="statistics-section" id="numbers">
+			<div class="container">
+				<h2 class="section-title">Мы в цифрах</h2>
+				<div class="statistics-grid">
+					<div class="statistic-item">
+						<div class="statistic-icon">
+							<i class="fas fa-calendar-alt"></i>
+						</div>
+						<div class="statistic-number" data-target="15">0</div>
+						<div class="statistic-label">лет на рынке</div>
 					</div>
 
-					<div class="team-image">
-						<img src="Images/team.jpeg" alt="Наша команда" class="team-img">
-					</div>
-				</div>
-
-				<div class="work-with-us">
-					<h3>Что значит работать в ГК «Серт Эксперт»</h3>
-					<div class="work-items">
-						<div class="work-item">
-							<div class="work-icon">
-								<i class="fas fa-check-circle"></i>
-							</div>
-							<p>Выполнять работу, которая имеет важное значение для общества</p>
+					<div class="statistic-item">
+						<div class="statistic-icon">
+							<i class="fas fa-users"></i>
 						</div>
-
-						<div class="work-item">
-							<div class="work-icon">
-								<i class="fas fa-check-circle"></i>
-							</div>
-							<p>Приходите таким, какой вы есть - нам нужны индивидуальные и сильные личности</p>
-						</div>
-
-						<div class="work-item">
-							<div class="work-icon">
-								<i class="fas fa-check-circle"></i>
-							</div>
-							<p>Процветайте вместе с нами - сильной командой профессионалов</p>
-						</div>
-
-						<div class="work-item">
-							<div class="work-icon">
-								<i class="fas fa-check-circle"></i>
-							</div>
-							<p>Учитесь и развивайтесь в разных направлениях, вы не будете ограничены рамками</p>
-						</div>
-
-						<div class="work-item">
-							<div class="work-icon">
-								<i class="fas fa-check-circle"></i>
-							</div>
-							<p>Оставьте свой след - будьте лидером и создайте свою команду</p>
-						</div>
+						<div class="statistic-number" data-target="200">0</div>
+						<div class="statistic-label">команда профессионалов</div>
 					</div>
 
-					<div class="work-summary">
-						<p>Мы предоставляем всем нашим сотрудникам самые широкие возможности для профессиональной самореализации,
-							карьерного роста и достойного заработка!</p>
+					<div class="statistic-item">
+						<div class="statistic-icon">
+							<i class="fas fa-file-alt"></i>
+						</div>
+						<div class="statistic-number" data-target="30">0</div>
+						<div class="statistic-label">технических регламентов в области аккредитации</div>
+					</div>
+					<div class="statistic-item">
+						<div class="statistic-icon">
+							<i class="fas fa-flask"></i>
+						</div>
+						<div class="statistic-number" data-target="10000">0</div>
+						<div class="statistic-label">методик испытаний</div>
+					</div>
+					<div class="statistic-item">
+						<div class="statistic-icon">
+							<i class="fas fa-tools"></i>
+						</div>
+						<div class="statistic-number" data-target="6000">0</div>
+						<div class="statistic-label">единиц современного испытательного оборудования</div>
+					</div>
+					<div class="statistic-item">
+						<div class="statistic-icon">
+							<i class="fas fa-globe"></i>
+						</div>
+						<div class="statistic-number" data-target="50000">0</div>
+						<div class="statistic-label">клиентов, в том числе и за пределами РФ</div>
 					</div>
 				</div>
 			</div>
@@ -414,13 +290,15 @@
 
 					<div class="footer-contacts">
 						<h3>Контакты</h3>
-						<p><i class="fas fa-phone"></i> +7 (999) 123-45-67</p>
-						<p><i class="fas fa-envelope"></i> info@sertexpert.ru</p>
-						<p><i class="fas fa-map-marker-alt"></i> г. Москва, ул. Серт Эксперт, д. 1</p>
+						<p><i class="fas fa-phone"></i> <a href="tel:+79309409036" style="color: white;">+7-930-940-90-36</a></p>
+						<p><i class="fas fa-phone"></i> <a href="tel:+79919638705" style="color: white;">+7-991-963-87-05</a></p>
+						<p><i class="fas fa-envelope"></i> <a href="mailto:info1@sert-xpert.ru"
+								style="color: white;">info1@sert-xpert.ru</a></p>
+						<p><i class="fas fa-map-marker-alt"></i> г. Москва, Пакгаузное шоссе, дом 1</p>
 						<div class="social-icons">
 							<a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
 							<a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-							<a href="#" class="social-icon"><i class="fab fa-vk"></i></a>
+							<a href="#" class="social-icon vk-icon"><i class="fab fa-vk"></i></a>
 						</div>
 					</div>
 				</div>
@@ -428,14 +306,17 @@
 				<div class="footer-menu">
 					<ul class="footer-nav-links">
 						<li><a href="#about">О компании</a></li>
-						<li><a href="#services">Услуги</a></li>
+						<li><a href="services.html">Услуги</a></li>
 						<li><a href="#vacancies">Вакансии</a></li>
 						<li><a href="#numbers">Мы в цифрах</a></li>
 					</ul>
 				</div>
 
 				<div id="map" class="footer-map">
-					<iframe src="https://yandex.com/map-widget/v1/-/CHV9F46y" width="100%" height="100%" frameborder="0"></iframe>
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8625.67798038036!2d37.51312611698766!3d55.84155675605933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b537c25f1d1a41%3A0xe33b1069d2295d8e!2z0J_QsNC60LPQsNGD0LfQvdC-0LUg0YguLCAxLCDQnNC-0YHQutCy0LAsINCg0L7RgdGB0LjRjywgMTI1NDM4!5e0!3m2!1sru!2seg!4v1744567018205!5m2!1sru!2seg"
+						width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
 				</div>
 			</div>
 
@@ -445,7 +326,18 @@
 		</div>
 	</footer>
 
+	<!-- Модальное окно для VK -->
+	<div class="modal" id="vk-modal">
+		<div class="modal-content">
+			<h3>Уведомление</h3>
+			<p>В данный момент группа находится в разработке</p>
+			<button class="close-modal">Закрыть</button>
+		</div>
+	</div>
+
 	<script src="script.js"></script>
+	<script src="script-header.js"></script>
+	<script src="script-active-menu.js"></script>
 </body>
 
 </html>

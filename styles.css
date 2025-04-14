@@ -1,10 +1,10 @@
 :root {
-  /* Схема 4525 (по умолчанию) */
-  --primary-color: #2b7a78;
-  --secondary-color: #3aafa9;
-  --light-gray: #def2f1;
-  --cream: #def2f1;
-  --accent-color: #3aafa9;
+  /* Новая цветовая схема */
+  --primary-color: #374785;
+  --secondary-color: #a8d0e6;
+  --light-gray: #f8e9a1;
+  --cream: #f8e9a1;
+  --accent-color: #f76c6c;
 }
 
 * {
@@ -32,6 +32,10 @@ body {
   transition: all 0.4s ease;
 }
 
+.header.scrolled {
+  padding: 5px 0;
+}
+
 .nav {
   display: flex;
   justify-content: space-between;
@@ -40,16 +44,34 @@ body {
   transition: all 0.4s ease;
 }
 
+.header.scrolled .nav {
+  padding: 0.5rem 2rem;
+}
+
 .logo-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 0.1rem;
+  transition: all 0.4s ease;
+}
+
+.logo-container a {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: inherit;
 }
 
 .logo-img {
   height: 80px;
   width: auto;
+  transition: all 0.4s ease;
+}
+
+.header.scrolled .logo-img {
+  height: 50px;
 }
 
 .logo-text {
@@ -58,6 +80,12 @@ body {
   color: var(--primary-color);
   margin-top: -1rem;
   text-align: center;
+  transition: all 0.4s ease;
+}
+
+.header.scrolled .logo-text {
+  font-size: 1.4rem;
+  margin-top: -0.5rem;
 }
 
 .nav-links {
@@ -68,22 +96,40 @@ body {
 }
 
 .nav-links a {
-  color: var(--primary-color);
+  color: #1a3b6e;
   text-decoration: none;
+  padding: 10px 15px;
   font-weight: 500;
   position: relative;
   transition: color 0.3s ease;
 }
 
+.nav-links a.active,
+.nav-links a.active::after {
+  color: #f05a28;
+}
+
+.nav-links a.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  background-color: #f05a28;
+  transform: scaleX(1);
+}
+
 .nav-links a::after {
   content: "";
   position: absolute;
-  width: 0;
+  bottom: 0;
+  left: 15%;
+  width: 70%;
   height: 2px;
-  bottom: -5px;
-  left: 0;
-  background-color: var(--accent-color);
-  transition: width 0.3s ease;
+  background-color: #f05a28;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
 }
 
 .nav-links a:hover {
@@ -91,7 +137,7 @@ body {
 }
 
 .nav-links a:hover::after {
-  width: 100%;
+  transform: scaleX(1);
 }
 
 .startup-btn {
@@ -368,6 +414,32 @@ body {
 
   .footer-map {
     height: 300px;
+    width: 100%;
+    margin-top: 20px;
+    order: 3;
+  }
+
+  .footer-info {
+    width: 100%;
+    order: 1;
+  }
+
+  .footer-menu {
+    width: 100%;
+    order: 2;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-map {
+    height: 250px;
+  }
+
+  .footer-map iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
   }
 }
 
@@ -377,7 +449,16 @@ body {
   opacity: 0;
   transform: translateY(10px);
   animation: fadeInUp 1s ease-out forwards;
-  animation-delay: 5s;
+  animation-delay: 1s;
+  transition: all 0.4s ease;
+}
+
+.header.scrolled .slogan {
+  opacity: 0;
+  height: 0;
+  margin: 0;
+  overflow: hidden;
+  animation: none;
 }
 
 @keyframes fadeInUp {
@@ -711,6 +792,14 @@ body {
   font-weight: 700;
   color: var(--primary-color);
   margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.statistic-number::before {
+  content: ">";
+  font-size: 2rem;
+  margin-right: 0.3rem;
+  color: var(--accent-color);
 }
 
 .statistic-label {
@@ -736,6 +825,10 @@ body {
   .statistic-number {
     font-size: 2.5rem;
   }
+
+  .statistic-number::before {
+    font-size: 1.8rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -745,6 +838,14 @@ body {
 
   .statistic-label {
     font-size: 1rem;
+  }
+
+  .statistic-number {
+    font-size: 2rem;
+  }
+
+  .statistic-number::before {
+    font-size: 1.5rem;
   }
 }
 
@@ -912,6 +1013,7 @@ body {
   border-radius: 15px;
   padding: 3rem;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
 }
 
 .team-text {
@@ -1533,5 +1635,619 @@ body {
 
   .nav-links a {
     font-size: 1.1rem;
+  }
+}
+
+/* Стили для страницы услуг */
+body:has(.services-section:first-child) {
+  background-color: var(--light-gray);
+}
+
+.services-section:first-child {
+  padding-top: 8rem;
+  min-height: 100vh;
+}
+
+.services-section:first-child .section-title {
+  margin-bottom: 3rem;
+}
+
+.services-section:first-child .services-subtitle {
+  margin-bottom: 4rem;
+  font-size: 1.4rem;
+}
+
+/* Стили для страницы вакансий */
+.vacancies-section {
+  padding: 60px 0;
+}
+
+.page-title {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #1a3b6e;
+}
+
+.job-listings {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.job-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  height: 380px;
+  position: relative;
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.job-title {
+  color: #1a3b6e;
+  margin-bottom: 15px;
+  font-size: 20px;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 104px;
+}
+
+.job-info {
+  margin-top: auto;
+  margin-bottom: 20px;
+}
+
+.job-location,
+.job-experience {
+  margin-bottom: 10px;
+  color: #555;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.job-location i,
+.job-experience i {
+  color: #1a3b6e;
+  margin-right: 10px;
+  width: 20px;
+}
+
+.job-salary {
+  color: #1a3b6e;
+  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+}
+
+.job-salary:before {
+  content: "\f158";
+  font-family: "Font Awesome 5 Free";
+  margin-right: 10px;
+  color: #1a3b6e;
+}
+
+.details-btn {
+  background-color: #1a3b6e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  font-weight: 500;
+  width: 100%;
+}
+
+.details-btn:hover {
+  background-color: #15305c;
+}
+
+/* Стили для модального окна с деталями вакансии */
+.job-details-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.job-details-container.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.job-details-content {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.job-details-content h3 {
+  color: #1a3b6e;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.job-details-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.job-details-info p {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.1rem;
+  color: #1a3b6e;
+}
+
+.job-details-info i {
+  margin-right: 0.5rem;
+  color: #f05a28;
+}
+
+.job-details-description h4 {
+  color: #1a3b6e;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.job-details-description ul {
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.job-details-description li {
+  margin-bottom: 0.5rem;
+  position: relative;
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+.job-details-description li::before {
+  content: "•";
+  color: #f05a28;
+  font-size: 1.2rem;
+  position: absolute;
+  left: 0;
+  top: -0.1rem;
+}
+
+.job-details-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.job-details-actions button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.apply-btn {
+  background-color: #f05a28;
+  color: white;
+  border: none;
+}
+
+.apply-btn:hover {
+  background-color: #d84a1e;
+}
+
+.close-details-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.close-details-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Стили для формы отклика */
+.application-form-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.application-form {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 800px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.application-form h3 {
+  color: #1a3b6e;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.application-form h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 2px;
+  background-color: #f05a28;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: #1a3b6e;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #1a3b6e;
+  outline: none;
+}
+
+/* Стилизация кнопки прикрепления файла */
+.form-group input[type="file"] {
+  display: none;
+}
+
+.file-upload-wrapper {
+  position: relative;
+  margin-top: 0.5rem;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  width: 100%;
+  text-align: center;
+}
+
+.custom-file-upload i {
+  margin-right: 0.5rem;
+  color: #f05a28;
+}
+
+.custom-file-upload:hover {
+  background-color: #e0e0e0;
+}
+
+.file-name {
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.submit-btn,
+.cancel-btn {
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.submit-btn {
+  background-color: #f05a28;
+  color: white;
+  border: none;
+}
+
+.submit-btn:hover {
+  background-color: #d84a1e;
+}
+
+.cancel-btn {
+  background-color: #f0f0f0;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.cancel-btn:hover {
+  background-color: #e0e0e0;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .form-actions {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .submit-btn,
+  .cancel-btn {
+    width: 100%;
+  }
+}
+
+/* Отступ для якорных ссылок с учетом фиксированного хедера */
+section[id] {
+  scroll-margin-top: 120px;
+}
+
+section[id].scrolled {
+  scroll-margin-top: 80px;
+}
+
+/* Стили для модальных окон (вакансии) */
+.job-details-container,
+.application-form-container {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.job-details-container.visible,
+.application-form-container.visible {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Стили для чек-бокса согласия на обработку персональных данных */
+.privacy-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.privacy-checkbox input[type="checkbox"] {
+  min-width: 16px;
+  height: 16px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0;
+  flex: 0 0 10%;
+}
+
+.privacy-checkbox label {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #555;
+  cursor: pointer;
+  flex: 0 0 90%;
+}
+
+.privacy-checkbox a {
+  color: #f05a28;
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+.privacy-checkbox a:hover {
+  color: #d84a1e;
+}
+
+/* Стили для страницы политики конфиденциальности */
+.privacy-policy {
+  padding: 60px 0;
+}
+
+.privacy-policy h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.privacy-content {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.privacy-content h2 {
+  font-size: 24px;
+  color: #1a5276;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 10px;
+}
+
+.privacy-content p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+.privacy-content ul {
+  margin-bottom: 20px;
+  padding-left: 20px;
+}
+
+.privacy-content ul li {
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+
+.privacy-content a {
+  color: #2980b9;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.privacy-content a:hover {
+  color: #1a5276;
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .privacy-policy {
+    padding: 40px 15px;
+  }
+
+  .privacy-policy h1 {
+    font-size: 28px;
+  }
+
+  .privacy-content {
+    padding: 20px;
+  }
+
+  .privacy-content h2 {
+    font-size: 22px;
+  }
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #233142;
+  color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 80%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.modal-content h3 {
+  margin-top: 0;
+  color: var(--accent-color);
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.modal-content p {
+  margin-bottom: 25px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.close-modal {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.3s;
+}
+
+.close-modal:hover {
+  background-color: #ff6b6b;
+}
+
+/* Анимация появления модального окна */
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal.show .modal-content {
+  animation: modalFadeIn 0.3s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .modal-content {
+    width: 90%;
+    padding: 20px;
   }
 }

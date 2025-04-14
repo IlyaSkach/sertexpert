@@ -166,4 +166,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Дополнительно запускаем через небольшую задержку для уверенности
   setTimeout(handleScroll, 500);
+
+  // Модальное окно VK
+  const vkIcons = document.querySelectorAll(".vk-icon");
+  const modal = document.getElementById("vk-modal");
+  const closeModalBtn = document.querySelector(".close-modal");
+
+  vkIcons.forEach((icon) => {
+    icon.addEventListener("click", function (e) {
+      e.preventDefault();
+      modal.style.display = "flex";
+      modal.classList.add("show");
+    });
+  });
+
+  closeModalBtn.addEventListener("click", function () {
+    modal.classList.remove("show");
+    setTimeout(() => {
+      modal.style.display = "none";
+    }, 300);
+  });
+
+  // Закрытие модального окна при клике вне его содержимого
+  modal.addEventListener("click", function (e) {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+      setTimeout(() => {
+        modal.style.display = "none";
+      }, 300);
+    }
+  });
 });

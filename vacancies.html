@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Вакансии - СертЭксперт</title>
+	<link rel="stylesheet" href="styles.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<style>
+		/* Дополнительные стили для страницы вакансий */
+		.job-details-container,
+		.application-form-container {
+			display: none;
+		}
+
+		.job-details-container.visible,
+		.application-form-container.visible {
+			display: flex;
+		}
+	</style>
+</head>
+
+<body>
+	<header class="header">
+		<nav class="nav">
+			<div class="logo-container">
+				<a href="index.html">
+					<img src="Images/logo.png" alt="СертЭксперт" class="logo-img">
+					<div class="logo-text">СертЭксперт</div>
+					<div class="slogan">Мы сделаем Ваш бизнес лучше!</div>
+				</a>
+			</div>
+
+			<div class="burger-menu">
+				<div class="burger-line"></div>
+				<div class="burger-line"></div>
+				<div class="burger-line"></div>
+			</div>
+
+			<ul class="nav-links">
+				<li><a href="index.html">Главная</a></li>
+				<!-- <li><a href="index.html#about">О компании</a></li> -->
+				<li><a href="services.html">Услуги</a></li>
+				<li><a href="vacancies.html">Вакансии</a></li>
+				<!-- <li><a href="index.html#numbers">Мы в цифрах</a></li> -->
+				<li><a href="index.html#startup" class="startup-btn">Заявка на стартап</a></li>
+			</ul>
+
+			<div class="contacts">
+				<div class="social-icons">
+					<a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+					<a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+					<a href="#" class="social-icon vk-icon"><i class="fab fa-vk"></i></a>
+				</div>
+				<a href="#map" class="address-link">г. Москва, Пакгаузное шоссе, дом 1</a>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<section class="vacancies-section">
+			<div class="container">
+				<h2 class="section-title">Вакансии</h2>
+				<div class="open-positions">
+
+					<div class="job-listings">
+						<div class="job-card">
+							<h3 class="job-title">Эксперт по сертификации</h3>
+							<div class="job-info">
+								<div class="job-location">
+									<i class="fas fa-map-marker-alt"></i> Москва
+								</div>
+								<div class="job-experience">
+									<i class="fas fa-briefcase"></i> Опыт работы: от 1 года
+								</div>
+								<div class="job-salary">от 80 000 ₽</div>
+							</div>
+							<button class="details-btn" data-position="Эксперт по сертификации">Подробнее</button>
+						</div>
+
+						<div class="job-card">
+							<h3 class="job-title">Менеджер по работе с клиентами и развитию партнерской сети в сфере сертификации</h3>
+							<div class="job-info">
+								<div class="job-location">
+									<i class="fas fa-map-marker-alt"></i> Москва
+								</div>
+								<div class="job-experience">
+									<i class="fas fa-briefcase"></i> Опыт работы: от 1 года
+								</div>
+								<div class="job-salary">от 70 000 ₽</div>
+							</div>
+							<button class="details-btn"
+								data-position="Менеджер по работе с клиентами и развитию партнерской сети в сфере сертификации">Подробнее</button>
+						</div>
+
+						<div class="job-card">
+							<h3 class="job-title">Специалист испытательной лаборатории</h3>
+							<div class="job-info">
+								<div class="job-location">
+									<i class="fas fa-map-marker-alt"></i> Санкт-Петербург
+								</div>
+								<div class="job-experience">
+									<i class="fas fa-briefcase"></i> Опыт работы: от 2 лет
+								</div>
+								<div class="job-salary">от 90 000 ₽</div>
+							</div>
+							<button class="details-btn" data-position="Специалист испытательной лаборатории">Подробнее</button>
+						</div>
+
+						<div class="job-card">
+							<h3 class="job-title">Ведущий инженер по техническому регулированию и стандартизации продукции</h3>
+							<div class="job-info">
+								<div class="job-location">
+									<i class="fas fa-map-marker-alt"></i> Москва
+								</div>
+								<div class="job-experience">
+									<i class="fas fa-briefcase"></i> Опыт работы: от 3 лет
+								</div>
+								<div class="job-salary">от 120 000 ₽</div>
+							</div>
+							<button class="details-btn"
+								data-position="Ведущий инженер по техническому регулированию и стандартизации продукции">Подробнее</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="job-details-container" id="job-details">
+					<div class="job-details-content">
+						<h3 id="job-details-title"></h3>
+						<div class="job-details-info">
+							<p id="job-details-location"></p>
+							<p id="job-details-experience"></p>
+							<p id="job-details-salary"></p>
+						</div>
+						<div class="job-details-description">
+							<div id="job-benefits">
+								<h4>Мы предлагаем:</h4>
+								<ul id="benefits-list"></ul>
+							</div>
+							<div id="job-responsibilities">
+								<h4>Что предстоит делать:</h4>
+								<ul id="responsibilities-list"></ul>
+							</div>
+							<div id="job-requirements">
+								<h4>Что ждем от кандидата:</h4>
+								<ul id="requirements-list"></ul>
+							</div>
+						</div>
+						<div class="job-details-actions">
+							<button class="apply-btn" id="apply-from-details">Откликнуться</button>
+							<button class="close-details-btn">Закрыть</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="application-form-container" id="application-form">
+					<div class="application-form">
+						<h3>Заполните форму для отклика</h3>
+						<form id="job-application">
+							<div class="form-group">
+								<label for="position">Должность</label>
+								<input type="text" id="position" name="position" readonly>
+							</div>
+							<div class="form-group">
+								<label for="name">ФИО*</label>
+								<input type="text" id="name" name="name" required>
+							</div>
+							<div class="form-group">
+								<label for="email">Email*</label>
+								<input type="email" id="email" name="email" required>
+							</div>
+							<div class="form-group">
+								<label for="phone">Телефон*</label>
+								<input type="tel" id="phone" name="phone" required>
+							</div>
+							<div class="form-group">
+								<label for="resume">Прикрепить резюме</label>
+								<div class="file-upload-wrapper">
+									<label for="resume" class="custom-file-upload">
+										<i class="fas fa-paperclip"></i> Выбрать файл
+									</label>
+									<input type="file" id="resume" name="resume">
+									<div class="file-name" id="file-name">Файл не выбран</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="cover-letter">Сопроводительное письмо</label>
+								<textarea id="cover-letter" name="cover-letter" rows="4"></textarea>
+							</div>
+							<div class="form-group">
+								<div class="privacy-checkbox">
+									<input type="checkbox" id="privacy-agreement" name="privacy-agreement" required>
+									<label for="privacy-agreement">Даю согласие на обработку персональных данных в соответствии с <a
+											href="privacy-policy.html" target="_blank">Политикой в отношении обработки персональных
+											данных</a></label>
+								</div>
+							</div>
+							<div class="form-actions">
+								<button type="button" class="cancel-btn">Отмена</button>
+								<button type="submit" class="submit-btn">Отправить</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="footer-content">
+				<div class="footer-info">
+					<div class="footer-logo">
+						<img src="Images/logo.png" alt="Серт Эксперт" class="footer-logo-img">
+						<p class="footer-logo-text">Серт Эксперт</p>
+					</div>
+
+					<div class="footer-contacts">
+						<h3>Контакты</h3>
+						<p><i class="fas fa-phone"></i> <a href="tel:+79309409036" style="color: white;">+7-930-940-90-36</a></p>
+						<p><i class="fas fa-phone"></i> <a href="tel:+79919638705" style="color: white;">+7-991-963-87-05</a></p>
+						<p><i class="fas fa-envelope"></i> <a href="mailto:info1@sert-xpert.ru"
+								style="color: white;">info1@sert-xpert.ru</a></p>
+						<p><i class="fas fa-map-marker-alt"></i> г. Москва, Пакгаузное шоссе, дом 1</p>
+						<div class="social-icons">
+							<a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
+							<a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+							<a href="#" class="social-icon vk-icon"><i class="fab fa-vk"></i></a>
+						</div>
+					</div>
+				</div>
+
+				<div class="footer-menu">
+					<ul class="footer-nav-links">
+						<li><a href="index.html#about">О компании</a></li>
+						<li><a href="services.html">Услуги</a></li>
+						<li><a href="vacancies.html">Вакансии</a></li>
+						<li><a href="index.html#numbers">Мы в цифрах</a></li>
+					</ul>
+				</div>
+
+				<div id="map" class="footer-map">
+					<iframe
+						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8625.67798038036!2d37.51312611698766!3d55.84155675605933!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b537c25f1d1a41%3A0xe33b1069d2295d8e!2z0J_QsNC60LPQsNGD0LfQvdC-0LUg0YguLCAxLCDQnNC-0YHQutCy0LAsINCg0L7RgdGB0LjRjywgMTI1NDM4!5e0!3m2!1sru!2seg!4v1744567018205!5m2!1sru!2seg"
+						width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy"
+						referrerpolicy="no-referrer-when-downgrade"></iframe>
+				</div>
+			</div>
+
+			<div class="footer-bottom">
+				<p>&copy; 2025 Серт Эксперт. Все права защищены.</p>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Модальное окно для VK -->
+	<div class="modal" id="vk-modal">
+		<div class="modal-content">
+			<h3>Уведомление</h3>
+			<p>В данный момент группа находится в разработке</p>
+			<button class="close-modal">Закрыть</button>
+		</div>
+	</div>
+
+	<script src="script.js"></script>
+	<script src="jobs-data.js"></script>
+	<script src="vacancies.js"></script>
+	<script src="script-header.js"></script>
+	<script src="script-active-menu.js"></script>
+</body>
+
+</html>
