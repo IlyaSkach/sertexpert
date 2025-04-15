@@ -10,6 +10,192 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+	<style>
+		/* Стили для модальных окон */
+		.modal {
+			display: none;
+			position: fixed;
+			z-index: 1000;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			align-items: center;
+			justify-content: center;
+		}
+
+		.modal.show {
+			display: flex;
+		}
+
+		.modal-content {
+			background-color: #fff;
+			padding: 30px;
+			border-radius: 10px;
+			width: 80%;
+			max-width: 800px;
+			max-height: 80vh;
+			overflow-y: auto;
+			position: relative;
+		}
+
+		.close-modal {
+			background-color: var(--accent-color);
+			color: white;
+			border: none;
+			padding: 10px 20px;
+			border-radius: 5px;
+			cursor: pointer;
+			margin-top: 20px;
+			font-weight: 500;
+		}
+
+		.close-modal:hover {
+			background-color: var(--primary-color);
+		}
+
+		/* Стили для форм */
+		.application-form {
+			width: 100%;
+		}
+
+		.form-group {
+			margin-bottom: 20px;
+		}
+
+		.form-group label {
+			display: block;
+			margin-bottom: 8px;
+			font-weight: 500;
+			color: var(--text-color);
+		}
+
+		.form-group input,
+		.form-group textarea {
+			width: 100%;
+			padding: 10px 15px;
+			border: 1px solid #ddd;
+			border-radius: 5px;
+			font-family: inherit;
+			font-size: 16px;
+		}
+
+		.file-upload-wrapper {
+			margin-top: 10px;
+		}
+
+		.custom-file-upload {
+			border: 1px solid #ddd;
+			display: inline-block;
+			padding: 10px 15px;
+			cursor: pointer;
+			border-radius: 5px;
+			background-color: #f8f8f8;
+			text-align: center;
+			transition: background-color 0.3s;
+			width: 100%;
+			font-weight: 500;
+		}
+
+		.custom-file-upload i {
+			margin-right: 0.5rem;
+			color: var(--accent-color);
+		}
+
+		.custom-file-upload:hover {
+			background-color: var(--secondary-color);
+		}
+
+		.file-name {
+			margin-top: 0.5rem;
+			font-size: 0.9rem;
+			color: #8aaaa5;
+		}
+
+		.form-actions {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 2rem;
+			gap: 1rem;
+		}
+
+		.submit-btn,
+		.cancel-btn {
+			padding: 0.8rem 1.5rem;
+			border-radius: 5px;
+			font-weight: 500;
+			cursor: pointer;
+			transition: all 0.3s ease;
+		}
+
+		.submit-btn {
+			background-color: var(--accent-color);
+			color: var(--white);
+			border: none;
+		}
+
+		.submit-btn:hover {
+			background-color: var(--primary-color);
+		}
+
+		.cancel-btn {
+			background-color: var(--light-gray);
+			color: var(--text-color);
+			border: 1px solid var(--secondary-color);
+		}
+
+		.cancel-btn:hover {
+			background-color: var(--secondary-color);
+		}
+
+		/* Стили для чек-бокса согласия */
+		.privacy-checkbox {
+			display: flex;
+			align-items: center;
+			gap: 0.5rem;
+			margin-bottom: 1rem;
+		}
+
+		.privacy-checkbox input[type="checkbox"] {
+			min-width: 16px;
+			height: 16px;
+			border: 1px solid #ddd;
+			border-radius: 3px;
+			cursor: pointer;
+			margin: 0;
+			flex: 0 0 10%;
+		}
+
+		.privacy-checkbox label {
+			font-size: 0.9rem;
+			line-height: 1.4;
+			color: #555;
+			cursor: pointer;
+			flex: 0 0 90%;
+		}
+
+		.privacy-checkbox a {
+			color: #a5956d;
+			text-decoration: underline;
+		}
+
+		.privacy-checkbox a:hover {
+			color: #8aaaa5;
+		}
+
+		@media (max-width: 768px) {
+			.form-actions {
+				flex-direction: column;
+				gap: 1rem;
+			}
+
+			.submit-btn,
+			.cancel-btn {
+				width: 100%;
+			}
+		}
+	</style>
 </head>
 
 <body>
@@ -35,13 +221,13 @@
 				<li><a href="services.html">Услуги</a></li>
 				<li><a href="vacancies.html">Вакансии</a></li>
 				<li><a href="#numbers">Мы в цифрах</a></li>
-				<li><a href="#startup" class="startup-btn">Заявка на стартап</a></li>
+				<li><a href="#" class="startup-btn" id="startup-btn">Заявка на стартап</a></li>
 			</ul>
 
 			<div class="contacts">
 				<div class="social-icons">
-					<a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-					<a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+					<a href="https://t.me/GKSertExpert" class="social-icon" target="_blank"><i class="fab fa-telegram"></i></a>
+					<a href="https://wa.me/79309409036" class="social-icon" target="_blank"><i class="fab fa-whatsapp"></i></a>
 					<a href="#" class="social-icon vk-icon"><i class="fab fa-vk"></i></a>
 				</div>
 				<a href="#map" class="address-link"> г. Москва, Пакгаузное шоссе, дом 1</a>
@@ -85,7 +271,7 @@
 						<p>Отличные возможности для специалистов со средним профессиональным и высшим образованием</p>
 					</div>
 				</div>
-				<button class="cta-button">Присоединиться к команде</button>
+				<a href="vacancies.html" class="cta-button">Присоединиться к команде</a>
 			</div>
 		</section>
 
@@ -289,26 +475,32 @@
 					</div>
 
 					<div class="footer-contacts">
-						<h3>Контакты</h3>
-						<p><i class="fas fa-phone"></i> <a href="tel:+79309409036" style="color: white;">+7-930-940-90-36</a></p>
-						<p><i class="fas fa-phone"></i> <a href="tel:+79919638705" style="color: white;">+7-991-963-87-05</a></p>
-						<p><i class="fas fa-envelope"></i> <a href="mailto:info1@sert-xpert.ru"
-								style="color: white;">info1@sert-xpert.ru</a></p>
-						<p><i class="fas fa-map-marker-alt"></i> г. Москва, Пакгаузное шоссе, дом 1</p>
+						<h3 style="color: var(--text-color);">Контакты</h3>
+						<p><i class="fas fa-phone" style="color: white;"></i> <a href="tel:+79309409036"
+								style="color: var(--text-color);">+7-930-940-90-36</a></p>
+						<p><i class="fas fa-phone" style="color: white;"></i> <a href="tel:+79919638705"
+								style="color: var(--text-color);">+7-991-963-87-05</a></p>
+						<p><i class="fas fa-envelope" style="color: white;"></i> <a href="mailto:info1@sert-xpert.ru"
+								style="color: var(--text-color);">info1@sert-xpert.ru</a></p>
+						<p style="color: var(--text-color);"><i class="fas fa-map-marker-alt" style="color: white;"></i> г. Москва,
+							Пакгаузное шоссе, дом 1</p>
 						<div class="social-icons">
-							<a href="#" class="social-icon"><i class="fab fa-telegram"></i></a>
-							<a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
-							<a href="#" class="social-icon vk-icon"><i class="fab fa-vk"></i></a>
+							<a href="https://t.me/GKSertExpert" class="social-icon" target="_blank"><i class="fab fa-telegram"
+									style="color: white;"></i></a>
+							<a href="https://wa.me/79309409036" class="social-icon" target="_blank"><i class="fab fa-whatsapp"
+									style="color: white;"></i></a>
+							<a href="#" class="social-icon vk-icon"><i class="fab fa-vk" style="color: white;"></i></a>
 						</div>
 					</div>
+					<a href="privacy.html" class="privacy-link" style="color: var(--text-color);">Политика в области ПД</a>
 				</div>
 
 				<div class="footer-menu">
 					<ul class="footer-nav-links">
-						<li><a href="#about">О компании</a></li>
-						<li><a href="services.html">Услуги</a></li>
-						<li><a href="#vacancies">Вакансии</a></li>
-						<li><a href="#numbers">Мы в цифрах</a></li>
+						<li><a href="#about" style="color: var(--text-color);">О компании</a></li>
+						<li><a href="services.html" style="color: var(--text-color);">Услуги</a></li>
+						<li><a href="#vacancies" style="color: var(--text-color);">Вакансии</a></li>
+						<li><a href="#numbers" style="color: var(--text-color);">Мы в цифрах</a></li>
 					</ul>
 				</div>
 
@@ -321,7 +513,7 @@
 			</div>
 
 			<div class="footer-bottom">
-				<p>&copy; 2025 Серт Эксперт. Все права защищены.</p>
+				<p style="color: var(--text-color);">&copy; 2025 Серт Эксперт. Все права защищены.</p>
 			</div>
 		</div>
 	</footer>
@@ -335,9 +527,243 @@
 		</div>
 	</div>
 
+	<!-- Модальное окно для заявки на стартап -->
+	<div class="modal" id="startup-modal" style="display: none;">
+		<div class="modal-content">
+			<div class="application-form">
+				<h3>Заявка на СтартАп</h3>
+				<form id="startup-application">
+					<div class="form-group">
+						<label for="startup-name">Название стартапа*</label>
+						<input type="text" id="startup-name" name="startup-name" required>
+					</div>
+					<div class="form-group">
+						<label for="name">ФИО*</label>
+						<input type="text" id="name" name="name" required>
+					</div>
+					<div class="form-group">
+						<label for="email">Email*</label>
+						<input type="email" id="email" name="email" required>
+					</div>
+					<div class="form-group">
+						<label for="phone">Телефон*</label>
+						<input type="tel" id="phone" name="phone" required>
+					</div>
+					<div class="form-group">
+						<label for="resume">Прикрепить презентацию</label>
+						<div class="file-upload-wrapper">
+							<label for="resume" class="custom-file-upload">
+								<i class="fas fa-paperclip"></i> Выбрать файл
+							</label>
+							<input type="file" id="resume" name="resume">
+							<div class="file-name" id="file-name">Файл не выбран</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="startup-description">Описание стартапа</label>
+						<textarea id="startup-description" name="startup-description" rows="4"></textarea>
+					</div>
+					<div class="form-group">
+						<div class="privacy-checkbox">
+							<input type="checkbox" id="privacy-agreement-startup" name="privacy-agreement" required>
+							<label for="privacy-agreement-startup">Даю <a href="#" class="consent-link-startup">согласие</a> на
+								обработку персональных данных.</label>
+						</div>
+					</div>
+					<div class="form-actions">
+						<button type="button" class="cancel-btn" id="close-startup-form">Отмена</button>
+						<button type="submit" class="submit-btn">Отправить</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<!-- Модальное окно для Согласия (для стартапа) -->
+	<div class="modal" id="consent-modal-startup" style="display: none;">
+		<div class="modal-content">
+			<h3 style="color: #8aaaa5; margin-bottom: 15px;">Согласие</h3>
+			<div style="margin-bottom: 25px;">
+				<p style="margin-bottom: 15px; line-height: 1.5;">Нажимая кнопку «Отправить», в соответствии с <a
+						href="privacy-policy.html" target="_blank" style="color: #a5956d; text-decoration: underline;">Условиями
+						обработки персональных данных</a> я даю согласие в адрес ООО «Серт Эксперт» (далее по тексту – Оператор) на
+					автоматизированную, а также без использования средств автоматизации обработку персональных данных, заполненных
+					в настоящей анкете и содержащихся во всех приложенных к ней файлах, в целях рассмотрения моей кандидатуры на
+					вакансию (должность), на которую я откликаюсь (претендую), а также включения меня в кадровый резерв, в том
+					числе с последующим направлением мне информации об открытых вакансиях и карьерных мероприятиях, а также в
+					целях рассмотрения заявки на стартап.</p>
+				<p style="margin-bottom: 15px; line-height: 1.5;">Я проинформирован(а), что под обработкой персональных данных
+					понимаются действия (операции) с персональными данными, включая сбор, запись, систематизацию, накопление,
+					хранение, уточнение (обновление, изменение), извлечение, использование, передачу (предоставление, доступ),
+					блокирование, удаление, уничтожение персональных данных. Передавая персональные данные третьего лица
+					Оператору, подтверждаю и гарантирую наличие согласия третьего лица на такое предоставление данных.</p>
+				<p style="margin-bottom: 15px; line-height: 1.5;">Согласие действует со дня его предоставления до дня отзыва в
+					письменной форме, но в любом случае не более 1 (одного) года со дня предоставления - в части рассмотрения моей
+					кандидатуры на вакансию (должность), на которую я откликаюсь (претендую), или в части рассмотрения заявки на
+					стартап, и не более 5 (пяти) лет со дня предоставления - в части включения меня в кадровый резерв,
+					рассмотрения заявки на стартап, в том числе с последующим направлением мне информации об открытых вакансиях и
+					карьерных мероприятиях, и одобрения моей заявки на стартап.</p>
+				<p style="margin-bottom: 15px; line-height: 1.5;">Отозвать согласие можно путём направления заявления в
+					свободной форме по адресу Оператора, указав в тексте: ФИО; номер основного документа, удостоверяющего личность
+					субъекта персональных данных или его представителя, сведения о дате выдачи указанного документа и выдавшем его
+					органе либо иные данные, позволяющие однозначно идентифицировать субъекта персональных данных; сведения,
+					подтверждающие участие в отношениях с Оператором, либо сведения, иным способом подтверждающие факт обработки
+					персональных данных Оператором; подпись гражданина (или его законного представителя).</p>
+			</div>
+			<button class="close-modal" style="margin: 0 auto; display: block;">Закрыть</button>
+		</div>
+	</div>
+
 	<script src="script.js"></script>
 	<script src="script-header.js"></script>
 	<script src="script-active-menu.js"></script>
+	<script>
+		// Код для модального окна VK
+		document.addEventListener("DOMContentLoaded", function () {
+			const vkIcons = document.querySelectorAll(".vk-icon");
+			const modal = document.getElementById("vk-modal");
+			const closeModalBtn = modal.querySelector(".close-modal");
+
+			vkIcons.forEach((icon) => {
+				icon.addEventListener("click", function (e) {
+					e.preventDefault();
+					modal.style.display = "flex";
+					modal.classList.add("show");
+				});
+			});
+
+			closeModalBtn.addEventListener("click", function () {
+				modal.classList.remove("show");
+				setTimeout(() => {
+					modal.style.display = "none";
+				}, 300);
+			});
+
+			// Закрытие модального окна при клике вне его содержимого
+			modal.addEventListener("click", function (e) {
+				if (e.target === modal) {
+					modal.classList.remove("show");
+					setTimeout(() => {
+						modal.style.display = "none";
+					}, 300);
+				}
+			});
+
+			// Код для модального окна стартапа
+			const startupBtn = document.getElementById("startup-btn");
+			const startupModal = document.getElementById("startup-modal");
+			const closeStartupBtn = document.getElementById("close-startup-form");
+
+			if (startupBtn) {
+				startupBtn.addEventListener("click", function (e) {
+					e.preventDefault();
+					startupModal.style.display = "flex";
+					startupModal.classList.add("show");
+				});
+			}
+
+			if (closeStartupBtn) {
+				closeStartupBtn.addEventListener("click", function () {
+					startupModal.classList.remove("show");
+					setTimeout(() => {
+						startupModal.style.display = "none";
+					}, 300);
+				});
+			}
+
+			// Закрытие при клике вне содержимого
+			startupModal.addEventListener("click", function (e) {
+				if (e.target === startupModal) {
+					startupModal.classList.remove("show");
+					setTimeout(() => {
+						startupModal.style.display = "none";
+					}, 300);
+				}
+			});
+
+			// Код для модального окна согласия (стартап)
+			const consentModalStartup = document.getElementById("consent-modal-startup");
+			const consentLinkStartup = document.querySelector(".consent-link-startup");
+			const closeConsentModalStartup = consentModalStartup.querySelector(".close-modal");
+
+			if (consentLinkStartup) {
+				consentLinkStartup.addEventListener("click", function (e) {
+					e.preventDefault();
+					consentModalStartup.style.display = "flex";
+					consentModalStartup.classList.add("show");
+				});
+			}
+
+			if (closeConsentModalStartup) {
+				closeConsentModalStartup.addEventListener("click", function () {
+					consentModalStartup.classList.remove("show");
+					setTimeout(() => {
+						consentModalStartup.style.display = "none";
+					}, 300);
+				});
+			}
+
+			// Закрытие при клике вне содержимого
+			consentModalStartup.addEventListener("click", function (e) {
+				if (e.target === consentModalStartup) {
+					consentModalStartup.classList.remove("show");
+					setTimeout(() => {
+						consentModalStartup.style.display = "none";
+					}, 300);
+				}
+			});
+
+			// Обработка загрузки файла
+			const fileInput = document.getElementById("resume");
+			const fileNameDisplay = document.getElementById("file-name");
+
+			if (fileInput && fileNameDisplay) {
+				fileInput.addEventListener("change", function () {
+					if (this.files && this.files[0]) {
+						fileNameDisplay.textContent = this.files[0].name;
+					} else {
+						fileNameDisplay.textContent = "Файл не выбран";
+					}
+				});
+			}
+
+			// Валидация формы стартапа при отправке
+			const startupForm = document.getElementById("startup-application");
+			if (startupForm) {
+				startupForm.addEventListener("submit", function (e) {
+					e.preventDefault();
+
+					// Проверка обязательных полей
+					const startupName = document.getElementById("startup-name").value;
+					const fullName = document.getElementById("name").value;
+					const email = document.getElementById("email").value;
+					const phone = document.getElementById("phone").value;
+					const privacyAgreement = document.getElementById("privacy-agreement-startup").checked;
+
+					if (!startupName || !fullName || !email || !phone) {
+						alert("Пожалуйста, заполните все обязательные поля.");
+						return;
+					}
+
+					if (!privacyAgreement) {
+						alert("Необходимо дать согласие на обработку персональных данных.");
+						return;
+					}
+
+					// Если все проверки пройдены, можно отправить форму
+					alert("Заявка успешно отправлена!");
+
+					// Сброс формы и закрытие модального окна
+					startupForm.reset();
+					fileNameDisplay.textContent = "Файл не выбран";
+					startupModal.classList.remove("show");
+					setTimeout(() => {
+						startupModal.style.display = "none";
+					}, 300);
+				});
+			}
+		});
+	</script>
 </body>
 
 </html>

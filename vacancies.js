@@ -127,4 +127,46 @@ document.addEventListener("DOMContentLoaded", function () {
       }
       applicationForm.classList.remove("visible");
     });
+
+  // Для модального окна VK
+  const vkModal = document.getElementById("vk-modal");
+  const vkIcon = document.querySelector(".vk-icon");
+  const closeVkModal = vkModal.querySelector(".close-modal");
+
+  vkIcon.addEventListener("click", function (e) {
+    e.preventDefault();
+    vkModal.classList.add("show");
+  });
+
+  closeVkModal.addEventListener("click", function () {
+    vkModal.classList.remove("show");
+  });
+
+  // Для модального окна согласия
+  const consentModal = document.getElementById("consent-modal");
+  const consentLink = document.querySelector(".consent-link");
+  const closeConsentModal = consentModal.querySelector(".close-modal");
+
+  if (consentLink) {
+    consentLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      consentModal.classList.add("show");
+    });
+  }
+
+  if (closeConsentModal) {
+    closeConsentModal.addEventListener("click", function () {
+      consentModal.classList.remove("show");
+    });
+  }
+
+  // Закрытие модальных окон при клике вне их содержимого
+  window.addEventListener("click", function (e) {
+    if (e.target === vkModal) {
+      vkModal.classList.remove("show");
+    }
+    if (e.target === consentModal) {
+      consentModal.classList.remove("show");
+    }
+  });
 });

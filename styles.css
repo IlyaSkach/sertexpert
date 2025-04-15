@@ -15,6 +15,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  color: inherit;
 }
 
 body {
@@ -269,6 +271,8 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 5px 15px var(--shadow-light);
+  text-decoration: none;
+  display: inline-block;
 }
 
 .cta-button:hover {
@@ -2273,4 +2277,9 @@ section[id].scrolled {
     width: 90%;
     padding: 20px;
   }
+}
+
+.modal-content a {
+  color: #a5956d;
+  text-decoration: underline;
 }
